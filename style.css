@@ -11,6 +11,7 @@ h1 {
     margin: 0;
     color:rgb(249, 197, 206);
     font-size: 40px;
+    font-family: cursive;
 }
 #all-contents {
     max-width: 800px;
