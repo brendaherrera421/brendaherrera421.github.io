@@ -12,6 +12,17 @@ h1 {
     color:rgb(249, 197, 206);
     font-size: 40px;
     font-family: cursive;
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+      -moz-animation: glow 2s ease-in-out infinite alternate;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 20px #e34694, 0 0 20px #e60073, 0 0 30px #e60073, 0 0 30px #e60073, 0 0 30px #e60073;
+  }
+  to {
+    text-shadow: 0 0 1px #fff, 0 0 20px #ff4da6, 0 0 10px #ff4da6, 0 0 20px #ff4da6, 0 0 30px #ff4da6, 0 0 30px #ff4da6, 0 0 40px #ff4da6;
+  }
 }
 #all-contents {
     max-width: 800px;
