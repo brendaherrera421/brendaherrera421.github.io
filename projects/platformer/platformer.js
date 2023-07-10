@@ -80,6 +80,7 @@ $(function () {
     // example usage: createCollectable(type, x, y, gravity, bounce)
     createCollectable("database", 585, 290);
     createCollectable("steve", 60, 450, 10, 0.5);
+    createCollectable("grace",1350,590)
 
 
     // TODO 3
