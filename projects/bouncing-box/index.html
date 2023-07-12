@@ -54,8 +54,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY)
 			}
 
 			// changes the text displayed on the Box
@@ -68,9 +69,12 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
-			var positionX = 0;
+			var positionX = 1;
 			var points = 1;
-			var speed = 10;
+			var speedX = 10;
+			var positionY = 1;
+			var speedY = 10
+			var boardHeight = jQuery(window).height();
 
 
 			/* 
@@ -80,15 +84,21 @@
 			*/
 			function update() {
 				/* your code to increase positionX by 10 HERE*/
-				moveBoxTo(positionX);
-				positionX = positionX + speed;
+				positionX = positionX + speedX;
 				if (positionX > boardWidth) {
-					speed = -speed
+					speedX = -speedX
 				}
 				if (positionX < 0) {
-					speed = -speed
+					speedX = -speedX
 				}
-
+				positionY = positionY + speedY;
+				if (positionY > boardHeight){
+					speedY = -speedY
+				}
+				if (positionY < 0){
+					speedY = -speedY
+				}
+				moveBoxTo(positionX, positionY);
 
 			};
 
@@ -102,11 +112,17 @@
 				// your code to increase the point variables by 1 //
 				changeBoxText(points);
 				points = points + 1
-				if (speed > 0) {
-					speed = speed + 3
+				if (speedX > 0) {
+					speedX = speedX + 3
 				}
-				else if (speed < 0) {
-					speed = speed - 3
+				else if (speedX < 0) {
+					speedX = speedX - 3
+				}
+				if (speedY > 0){
+					speedY = speedY + 3
+				}
+				else if (speedY < 0){
+					speedY = speedY + 3
 				}
 
 
