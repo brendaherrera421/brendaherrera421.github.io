@@ -1,12 +1,13 @@
 
 body {
-  background-color: darkgreen;
+  background: url("https://t4.ftcdn.net/jpg/01/00/68/93/360_F_100689383_LyhzAVrP8ev2Sho2Rw3GA9CA1jTJF2eR.jpg");
 }
 
 #board {
   width: 440px;
   height: 440px;
-  border: 1px solid white;
+  border: 15px solid rgb(255, 251, 2);
+  border-style: groove;
   background-color: black;
 }
 
@@ -34,4 +35,23 @@ body {
 .apple {
   background-color: red;
   z-index: 1;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex> div {
+  margin: 10px;
+  padding: 20px;
+}
+
+#pic{
+  width: 250px;
+}
+
+#instructions{
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
 }
