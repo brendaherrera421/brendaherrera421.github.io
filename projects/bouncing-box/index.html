@@ -9,14 +9,17 @@
 		.box {
 			width: 100px;
 			height: 100px;
-			background-color: rgb(238, 2, 255);
+			background-image: url("https://i.redd.it/tengen-uzui-appreciation-post-v0-q3iw62d2fs5d1.jpg?width=736&format=pjpg&auto=webp&s=1e7141b13416c5a0f5c54d87741a8694f57ea008");
+			background-size: 100px;
+			border: 10px solid rgb(143, 46, 46);
 			font-size: 400%;
 			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px; /* <--- Change me! */
+			left: 0px;
+			/* <--- Change me! */
 		}
 
 		.board {
@@ -24,112 +27,116 @@
 			background-image: url("TrainingGrounds.png");
 			background-repeat: no-repeat;
 		}
+
+		#text {
+			color: rgb(0, 255, 255);
+			font-weight: bold;
+		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
 
 <body class="board">
+			<!-- HTML for the box -->
+			<div class="box" id="text">?</div>
 
-	<!-- HTML for the box -->
-	<div class="box">?</div>
+			<script>
+				(function () {
+					'use strict'
+					/* global jQuery */
 
-	<script>
-		(function () {
-			'use strict'
-			/* global jQuery */
+					//////////////////////////////////////////////////////////////////
+					/////////////////// SETUP DO NOT DELETE //////////////////////////
+					//////////////////////////////////////////////////////////////////
 
-			//////////////////////////////////////////////////////////////////
-			/////////////////// SETUP DO NOT DELETE //////////////////////////
-			//////////////////////////////////////////////////////////////////
+					var box = jQuery('.box');	// reference to the HTML .box element
+					var board = jQuery('.board');	// reference to the HTML .board element
+					var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
-			var box = jQuery('.box');	// reference to the HTML .box element
-			var board = jQuery('.board');	// reference to the HTML .board element
-			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+					// Every 50 milliseconds, call the update Function (see below)
+					setInterval(update, 50);
 
-			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+					// Every time the box is clicked, call the handleBoxClick Function (see below)
+					box.on('click', handleBoxClick);
 
-			// Every time the box is clicked, call the handleBoxClick Function (see below)
-			box.on('click', handleBoxClick);
+					// moves the Box to a new position on the screen along the X-Axis
+					function moveBoxTo(newPositionX, newPositionY) {
+						box.css("left", newPositionX);
+						box.css("top", newPositionY)
+					}
 
-			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX, newPositionY) {
-				box.css("left", newPositionX);
-				box.css("top", newPositionY)
-			}
+					// changes the text displayed on the Box
+					function changeBoxText(newText) {
+						box.text(newText);
+					}
 
-			// changes the text displayed on the Box
-			function changeBoxText(newText) {
-				box.text(newText);
-			}
+					//////////////////////////////////////////////////////////////////
+					/////////////////// YOUR CODE BELOW HERE /////////////////////////
+					//////////////////////////////////////////////////////////////////
 
-			//////////////////////////////////////////////////////////////////
-			/////////////////// YOUR CODE BELOW HERE /////////////////////////
-			//////////////////////////////////////////////////////////////////
-
-			// TODO 2 - Variable declarations 
-			var positionX = 1;
-			var points = 1;
-			var speedX = 10;
-			var positionY = 1;
-			var speedY = 10
-			var boardHeight = jQuery(window).height();
-
-
-			/* 
-			This Function will be called 20 times/second. Each time it is called,
-			it should move the Box to a new location. If the box drifts off the screen
-			turn it around! 
-			*/
-			function update() {
-				/* your code to increase positionX by 10 HERE*/
-				positionX = positionX + speedX;
-				if (positionX > boardWidth) {
-					speedX = -speedX
-				}
-				if (positionX < 0) {
-					speedX = -speedX
-				}
-				positionY = positionY + speedY;
-				if (positionY > boardHeight){
-					speedY = -speedY
-				}
-				if (positionY < 0){
-					speedY = -speedY
-				}
-				moveBoxTo(positionX, positionY);
-
-			};
-
-			/* 
-			This Function will be called each time the box is clicked. Each time it is called,
-			it should increase the points total, increase the speed, and move the box to
-			the left side of the screen.
-			*/
-			function handleBoxClick() {
-				positionX = 0;
-				// your code to increase the point variables by 1 //
-				changeBoxText(points);
-				points = points + 1
-				if (speedX > 0) {
-					speedX = speedX + 3
-				}
-				else if (speedX < 0) {
-					speedX = speedX - 3
-				}
-				if (speedY > 0){
-					speedY = speedY + 3
-				}
-				else if (speedY < 0){
-					speedY = speedY + 3
-				}
+					// TODO 2 - Variable declarations 
+					var positionX = 1;
+					var points = 1;
+					var speedX = 10;
+					var positionY = 1;
+					var speedY = 10
+					var boardHeight = jQuery(window).height();
 
 
+					/* 
+					This Function will be called 20 times/second. Each time it is called,
+					it should move the Box to a new location. If the box drifts off the screen
+					turn it around! 
+					*/
+					function update() {
+						/* your code to increase positionX by 10 HERE*/
+						positionX = positionX + speedX;
+						if (positionX > boardWidth) {
+							speedX = -speedX
+						}
+						if (positionX < 0) {
+							speedX = -speedX
+						}
+						positionY = positionY + speedY;
+						if (positionY > boardHeight) {
+							speedY = -speedY
+						}
+						if (positionY < 0) {
+							speedY = -speedY
+						}
+						moveBoxTo(positionX, positionY);
 
-			};
-		})();
-	</script>
+					};
+
+					/* 
+					This Function will be called each time the box is clicked. Each time it is called,
+					it should increase the points total, increase the speed, and move the box to
+					the left side of the screen.
+					*/
+					function handleBoxClick() {
+						positionX = 0;
+						// your code to increase the point variables by 1 //
+						changeBoxText(points);
+						points = points + 1
+						if (speedX > 0) {
+							speedX = speedX + 3
+						}
+						else if (speedX < 0) {
+							speedX = speedX - 3
+						}
+						if (speedY > 0) {
+							speedY = speedY + 3
+						}
+						else if (speedY < 0) {
+							speedY = speedY + 3
+						}
+
+
+
+					};
+				})();
+			</script>
 </body>
 
 </html>
