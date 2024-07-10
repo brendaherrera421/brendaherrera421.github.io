@@ -1,16 +1,22 @@
 #board {
-    background: black;
+    background-image: url("https://pa1.aminoapps.com/8202/943f0252cbe8766e92e6583fbe62e68f84406937r1-480-480_hq.gif");
+    background-size: 300px;
     width: 300px;
     height: 300px;
     left: 0px;
     top: 0px;
+    border: 15px solid rgb(107, 196, 18);
 }
 
 
 .circle {
-    background: blue;
+    background: rgb(249, 10, 241);
     width: 20px;
     height: 20px;
     border-radius: 10px;
     position: absolute;
+}
+
+body{
+    background: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/02/Gyutaro-and-Daki-on-Demon-Slayer.jpg")
 }
