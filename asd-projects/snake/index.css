@@ -24,17 +24,18 @@ body {
 }
 
 .snake {
-  background-color: green;
+  background-color: rgb(128, 0, 115);
   z-index: 2;
 }
 
 #snake-head {
-  background-color: darkgreen;
+  background-color: rgb(255, 0, 234);
 }
 
 .apple {
   background-color: red;
   z-index: 1;
+  border-radius: 10px;
 }
 
 .flex{
