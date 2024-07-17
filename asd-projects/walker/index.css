@@ -1,6 +1,8 @@
 
 body {
   background-image: url("https://t4.ftcdn.net/jpg/04/66/85/75/360_F_466857559_pmCC6pwLf3l5XsoZ58UdSiJPacfhqh07.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #board {
