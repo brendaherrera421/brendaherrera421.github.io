@@ -85,7 +85,7 @@ function runProgram(){
 
   function redrawGameItem(){
     $("#walker").css("left", walker.coordinateX);
-    $("#walker").css("right", walker.coordinateY);
+    $("#walker").css("top", walker.coordinateY);
   }
   
   function wallCollision(){
