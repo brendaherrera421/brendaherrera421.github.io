@@ -10,7 +10,8 @@ body {
   height: 440px;
   border: 1px solid white;
   background-image: url("https://rukminim2.flixcart.com/image/850/1000/kw2fki80/poster/e/9/j/medium-demon-slayer-kimetsu-no-yaiba-zenitsu-agatsuma-anime-boys-original-imag8trahkqgfu93.jpeg?q=20&crop=false");
-  background-size: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
 }
 
