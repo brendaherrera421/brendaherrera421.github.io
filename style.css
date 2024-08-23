@@ -5,7 +5,7 @@ body {
     font-family: arial;
 }
 
-h1 {
+#glow {
     display: flex;
     align-items: center;
     flex: 1;
@@ -17,6 +17,19 @@ h1 {
     -moz-animation: glow 2s ease-in-out infinite alternate;
     animation: glow 2s ease-in-out infinite alternate;
 }
+#music-header,
+#purpleGlow {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0;
+    color: rgb(201, 116, 240);
+    font-size: 40px;
+    font-family: cursive;
+    -webkit-animation: glowp 2s ease-in-out infinite alternate;
+    -moz-animation: glowp 2s ease-in-out infinite alternate;
+    animation: glowp 2s ease-in-out infinite alternate;
+}
 
 @-webkit-keyframes glow {
     from {
@@ -27,10 +40,39 @@ h1 {
         text-shadow: 0 0 1px #fff, 0 0 20px #ff4da6, 0 0 10px #ff4da6, 0 0 20px #ff4da6, 0 0 30px #ff4da6, 0 0 30px #ff4da6, 0 0 40px #ff4da6;
     }
 }
+@-webkit-keyframes glowp {
+    from {
+        text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 20px rgb(201, 53, 230), 0 0 20px #d40cf3, 0 0 30px #d61bf2, 0 0 30px #c30ae8, 0 0 30px #b710ef;
+    }
+
+    to {
+        text-shadow: 0 0 1px #fff, 0 0 20px #cc16ed, 0 0 10px #af0be6, 0 0 20px #a621e8, 0 0 30px #950ed8, 0 0 30px #a409e1, 0 0 40px #bd0eed;
+    }
+}
 
 #all-contents {
     max-width: 800px;
     margin: auto;
+}
+#music-taste {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgb(201, 116, 240);
+    margin-top: 15px;
+    border-style: ridge;
+    border-radius: 5% / 10%;
+}
+#music-header{
+    color: black;
+    margin-left: 15px;
+}
+.sleepToken{
+    margin-left: 40px;
+}
+#theSumm{
+    margin-top: 10px;
+    margin-left: 120px;
+    margin-bottom: 10px;
 }
 
 /* navigation menu */
@@ -75,6 +117,7 @@ main {
     height: 250px;
     border-radius: 50px;
     border-style: inset;
+    margin-top: 40px;
 }
 
 .content {
@@ -86,6 +129,7 @@ main {
 #interests {
     border: 4px silver ridge;
     padding: 8px;
+    border-radius: 15px;
 }
 
 h2,
@@ -93,8 +137,8 @@ h3 {
     margin: 0px;
 }
  /* portfolio styles */
- .content h1 {
-    color: rgb(180, 20, 224);
+ #purpleGlow {
+    color: black;
 }
 
 #portfolio {
