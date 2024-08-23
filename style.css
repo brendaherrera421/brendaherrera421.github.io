@@ -18,7 +18,7 @@ body {
     animation: glow 2s ease-in-out infinite alternate;
 }
 #music-header,
-#purpleGlow {
+.purpleGlow {
     display: flex;
     align-items: center;
     flex: 1;
@@ -40,7 +40,7 @@ body {
         text-shadow: 0 0 1px #fff, 0 0 20px #ff4da6, 0 0 10px #ff4da6, 0 0 20px #ff4da6, 0 0 30px #ff4da6, 0 0 30px #ff4da6, 0 0 40px #ff4da6;
     }
 }
-@-webkit-keyframes glowp {
+/* @-webkit-keyframes glowp {
     from {
         text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 20px rgb(201, 53, 230), 0 0 20px #d40cf3, 0 0 30px #d61bf2, 0 0 30px #c30ae8, 0 0 30px #b710ef;
     }
@@ -48,7 +48,7 @@ body {
     to {
         text-shadow: 0 0 1px #fff, 0 0 20px #cc16ed, 0 0 10px #af0be6, 0 0 20px #a621e8, 0 0 30px #950ed8, 0 0 30px #a409e1, 0 0 40px #bd0eed;
     }
-}
+} */
 
 #all-contents {
     max-width: 800px;
@@ -93,11 +93,12 @@ nav {
 .nav-li {
     display: inline-block;
     padding: 0 10px;
+    font-size: 20px;
 }
 
 a {
     text-decoration: none;
-    color: #8b16f1;
+    color: #000000;
 }
 
 /* main container area beneath menu */
@@ -137,8 +138,14 @@ h3 {
     margin: 0px;
 }
  /* portfolio styles */
- #purpleGlow {
+.purpleGlow {
     color: black;
+}
+#portCenter{
+    margin-left: 200px;
+}
+#advCenter{
+    margin-left: 180px;
 }
 
 #portfolio {
