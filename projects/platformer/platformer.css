@@ -3,7 +3,10 @@ body {
 }
 
 canvas {
-  background-color: white;
+  background-color: rgb(253, 200, 238);
+  border-style: inset;
+  border-width: 20px;
+  border-color: aqua;
 }
 
 img {
